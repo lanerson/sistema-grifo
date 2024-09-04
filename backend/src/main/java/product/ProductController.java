@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
+@RequestMapping(path = "/products")
 public class ProductController {
     private final ProductRepository repository;
 
@@ -26,7 +28,7 @@ public class ProductController {
     }
 
     // todos os produtos
-    @GetMapping("/products")
+    @GetMapping(path = "/all")
     CollectionModel<EntityModel<Product>> all() {
         List<EntityModel<Product>> products = repository.findAll().stream()
                 .map(assembler::toModel)
@@ -36,13 +38,13 @@ public class ProductController {
                 linkTo(methodOn(ProductController.class).all()).withSelfRel());
     }
 
-    @PostMapping("/products")
+    @PostMapping(path = "/create")
     Product newProduct(@RequestBody Product newProduct) {
         return repository.save(newProduct);
     }
 
     // para um único item
-    @GetMapping("/products/{id}")
+    @GetMapping(path = "/search/{id}")
     EntityModel<Product> one(@PathVariable Long id) {
 
         Product product = repository.findById(id)
@@ -51,14 +53,13 @@ public class ProductController {
         return assembler.toModel(product);
     }
 
-    @PutMapping("/products/{id}")
+    @PutMapping(path = "/update/{id}")
     Product replaceProduct(@RequestBody Product newProduct, @PathVariable Long id) {
         return repository.findById(id)
                 .map(product -> {
                     product.setName(newProduct.getName());
                     product.setPrice(newProduct.getPrice());
                     product.setPrice(newProduct.getPrice());
-                    product.setQtd(newProduct.getQtd());
                     return repository.save(product);
                 })
                 .orElseGet(() -> {
@@ -66,7 +67,7 @@ public class ProductController {
                 });
     }
 
-    @DeleteMapping("/products/{id}")
+    @DeleteMapping(path = "/delete/{id}")
     void deleteProduct(@PathVariable Long id) {
         repository.deleteById(id);
     }
