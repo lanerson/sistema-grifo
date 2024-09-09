@@ -1,4 +1,4 @@
-package product;
+package post;
 
 import java.util.Objects;
 
@@ -7,16 +7,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Product {
+class Post {
 
     private @Id @GeneratedValue Long id;
     private String name;
-    private float price;        
+    private float price;
 
-    Product() {
+    Post() {
     }
 
-    Product(String name, float price, int qtd) {
+    Post(String name, float price, int qtd) {
         this.name = name;
         this.price = price;
     }
@@ -52,6 +52,6 @@ class Product {
 
     @Override
     public String toString() {
-        return "Product{" + "id=" + this.id + ", name='" + this.name + '\'' + ", price=" + this.price +'}';
+        return "Post{" + "id=" + this.id + ", name='" + this.name + '\'' + ", price=" + this.price + '}';
     }
 }
