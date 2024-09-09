@@ -1,0 +1,40 @@
+body {
+    margin:0;
+}
+
+header{
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+}
+
+.iconheader img{
+    width: 20%;
+    height:auto;
+    margin-left: 5%;
+}
+
+.meiopag{
+    background-image: url("images/background.jpg");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+p {
+    background-color: white;
+}
+
+#grifao{
+    width: 30%;
+}
+
+footer {
+    color: #EEEEEE;
+    background-color: black;
+    text-align: center;
+    padding: 2%;
+}
