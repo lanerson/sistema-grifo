@@ -1,4 +1,4 @@
-package post;
+package com.example.backend.post;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 

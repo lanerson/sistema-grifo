@@ -1,4 +1,4 @@
-package product;
+package com.example.backend.product;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

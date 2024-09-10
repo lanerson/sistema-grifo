@@ -1,4 +1,4 @@
-package product;
+package com.example.backend.product;
 
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
