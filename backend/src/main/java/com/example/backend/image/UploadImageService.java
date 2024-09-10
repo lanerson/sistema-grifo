@@ -1,4 +1,4 @@
-package Image;
+package com.example.backend.image;
 
 import java.io.IOException;
 import java.util.UUID;

@@ -1,4 +1,4 @@
-package product;
+package com.example.backend.product;
 
 public class ProductNotFoundException extends RuntimeException {
     ProductNotFoundException(Long id) {

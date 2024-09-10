@@ -1,4 +1,4 @@
-package Image;
+package com.example.backend.image;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

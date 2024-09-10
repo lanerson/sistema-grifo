@@ -1,4 +1,4 @@
-package post;
+package com.example.backend.post;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

@@ -1,4 +1,4 @@
-package product;
+package com.example.backend.product;
 
 import java.util.List;
 import java.util.stream.Collectors;

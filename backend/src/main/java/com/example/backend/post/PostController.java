@@ -1,4 +1,4 @@
-package post;
+package com.example.backend.post;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -57,9 +57,8 @@ public class PostController {
     Post replacepost(@RequestBody Post newpost, @PathVariable Long id) {
         return repository.findById(id)
                 .map(post -> {
-                    post.setName(newpost.getName());
-                    post.setPrice(newpost.getPrice());
-                    post.setPrice(newpost.getPrice());
+                    post.setTitle(newpost.getTitle());
+                    post.setDescription(newpost.getDescription());                    
                     return repository.save(post);
                 })
                 .orElseGet(() -> {
