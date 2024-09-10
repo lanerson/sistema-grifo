@@ -17,19 +17,26 @@ header{
 }
 
 .meiopag{
-    background-image: url("images/background.jpg");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    background-image: url("../images/background.jpg");
+    display: flex;    
+    justify-content: space-around;
     align-items: center;
 }
 
-p {
-    background-color: white;
+.textosintro{
+    width: 40%;
+}
+
+.textosintro p{
+    font-size: 23px;
+    color:white;
+    border-radius: 25px;
+    background-color: #750000;
+    padding: 2%;
 }
 
 #grifao{
-    width: 30%;
+    width: 36%;
 }
 
 footer {
