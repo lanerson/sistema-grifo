@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.hateoas.CollectionModel;
 import org.springframework.hateoas.EntityModel;
@@ -39,7 +40,10 @@ public class ProductController {
     }
 
     @PostMapping(path = "/create")
-    Product newProduct(@RequestBody Product newProduct) {
+    Product newProduct(@RequestParam("name") String name, @RequestParam("price") float price) {
+        Product newProduct = new Product();
+        newProduct.setName(name);
+        newProduct.setPrice(price);
         return repository.save(newProduct);
     }
 

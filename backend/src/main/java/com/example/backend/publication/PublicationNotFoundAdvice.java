@@ -1,4 +1,4 @@
-package com.example.backend.post;
+package com.example.backend.publication;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class PostNotFoundAdvice {
+public class PublicationNotFoundAdvice {
 
-    @ExceptionHandler(PostNotFoundException.class)
+    @ExceptionHandler(PublicationNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    String productNotFoundHandler(PostNotFoundException ex) {
+    String postNotFoundHandler(PublicationNotFoundException ex) {
         return ex.getMessage();
     }
 }

@@ -1,4 +1,4 @@
-package com.example.backend.post;
+package com.example.backend.publication;
 
 import java.util.Objects;
 
@@ -7,16 +7,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
 @Entity
-class Post {
+class Publication {
 
     private @Id @GeneratedValue Long id;
     private String title;
     private String description;
 
-    Post() {
+    Publication() {
     }
 
-    Post(String title, String description, int qtd) {
+    Publication(String title, String description) {
         this.title = title;
         this.description = description;
     }
@@ -52,6 +52,6 @@ class Post {
 
     @Override
     public String toString() {
-        return "Post{" + "id=" + this.id + ", title='" + this.title + '\'' + ", description=" + this.description + '}';
+        return "Publication{" + "id=" + this.id + ", title='" + this.title + '\'' + ", description=" + this.description + '}';
     }
 }
