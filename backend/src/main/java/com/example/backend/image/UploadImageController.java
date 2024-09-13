@@ -21,7 +21,7 @@ public class UploadImageController {
     @Autowired
     private UploadImageService imageService;
 
-    @PostMapping("/upload")
+    @PostMapping("/create")
     public ResponseEntity<String> uploadImage(@RequestParam("image") MultipartFile file) {
         try {
             ImageUpload savedImage = imageService.saveImage(file);
@@ -31,7 +31,7 @@ public class UploadImageController {
         }
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/search/{id}")
     public ResponseEntity<byte[]> getImage(@PathVariable UUID id) {
         ImageUpload image = imageService.getImage(id);
 
@@ -44,7 +44,7 @@ public class UploadImageController {
         }
     }
 
-    @GetMapping("/show")
+    @GetMapping("/all")
     public List<ImageIdDTO> getAllImageIds() {
         return imageService.getAllImageIds().stream()
             .map(id -> {
