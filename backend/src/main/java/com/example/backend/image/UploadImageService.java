@@ -7,7 +7,6 @@ import java.util.UUID;
 import java.util.List;
 import java.util.stream.Collectors;
 
-
 import java.io.IOException;
 
 @Service
@@ -29,8 +28,19 @@ public class UploadImageService {
 
     public List<UUID> getAllImageIds() {
         return imageRepository.findAll().stream()
-                .map(ImageUpload::getImageId)  // Assumindo que você tem um método getId() na entidade Image
+                .map(ImageUpload::getImageId) // Assumindo que você tem um método getId() na entidade Image
                 .collect(Collectors.toList());
+    }
+
+    public boolean deleteImage(UUID id) {
+        ImageUpload image = imageRepository.findById(id).orElse(null);
+
+        if (image != null) {
+            imageRepository.deleteById(id);
+            return true;
+        } else {
+            return false;
+        }
     }
 
 }

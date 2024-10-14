@@ -54,4 +54,14 @@ public class UploadImageController {
             })
             .collect(Collectors.toList());
     }
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<String> deleteImage(@PathVariable UUID id) {
+        boolean isDeleted = imageService.deleteImage(id);
+    
+        if (isDeleted) {
+            return new ResponseEntity<>("Image deleted successfully", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("Image not found", HttpStatus.NOT_FOUND);
+        }
+    }
 }
