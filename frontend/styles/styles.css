@@ -1,13 +1,30 @@
-body {
-    margin:0;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {    
+    display: grid;
+    grid-template-rows: auto 1fr; /* Define duas linhas: uma para o header e outra para o conteúdo */
+    grid-template-columns: 100%; /* O layout terá uma única coluna que ocupa toda a largura */
+    min-height: 100vh; /* Garante que o layout ocupe toda a altura da tela */
+    margin: 0;
 }
 
 header{
+    position: fixed; /* Torna o header fixo no topo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Garante que o header ocupe toda a largura */
     display: flex;
     background-color: black;
     justify-content: space-between;
     align-items: center;
-    padding: 1%;
+    padding: 2%;
+    z-index: 1000;
+    height: 100px;
 }
 
 .iconheader img{
@@ -17,10 +34,12 @@ header{
 }
 
 .meiopag{
+    margin-top: 100px;
     background-image: url("../images/background.jpg");
     display: flex;    
     justify-content: space-around;
-    align-items: center;
+    align-items: center;    
+    height: 100%;  
 }
 
 .textosintro{
@@ -28,11 +47,12 @@ header{
 }
 
 .textosintro p{
-    font-size: 23px;
+    font-size: 1.2rem;
     color:white;
     border-radius: 25px;
     background-color: #750000;
     padding: 2%;
+    margin: 5px;
 }
 
 #grifao{
@@ -43,7 +63,8 @@ footer {
     color: #EEEEEE;
     background-color: black;
     text-align: center;
-    padding: 2%;
+    padding: 20px;
+    margin-top: auto;    
 }
 
 .button-avisos, .button-loja {
