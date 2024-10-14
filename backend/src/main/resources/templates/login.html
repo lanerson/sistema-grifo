@@ -10,13 +10,13 @@
      <img src="/images/grifo_roda.png" alt="grifao" id="grifao">
      <form class="form-login"  th:action="@{/login}" method="post">
         <label for="email">Email</label>
-        <input type="email" placeholder="Email (@ime.eb.br)" id="email">
+        <input type="text" placeholder="Email (@ime.eb.br)" id="email" name="email">
         <label for="password">Senha</label>
-        <input type="password" placeholder="Senha" id="password">
+        <input type="password" placeholder="Senha" id="password" name="password">
         <button type="submit">Entrar</button>
         <a href="">Esqueceu sua senha?</a>
     </form>
-    <script src="scripts/login.js" charset="utf-8"></script>
+    <!-- <script src="scripts/login.js" charset="utf-8"></script> -->
 </body>
 
 </html>

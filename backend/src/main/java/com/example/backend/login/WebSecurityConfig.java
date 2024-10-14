@@ -38,7 +38,6 @@ public class WebSecurityConfig {
     SecurityFilterChain configure(HttpSecurity http) throws Exception {
         http.authenticationProvider(authenticationProvider()); // Sets the
         // authentication provider
-
         http.authorizeHttpRequests(auth -> auth
                 .requestMatchers("/users").authenticated() // Requires authentication for
                 // "/users" endpoint
@@ -47,7 +46,7 @@ public class WebSecurityConfig {
 
                 .formLogin(login -> login.loginPage("/login")
                         .usernameParameter("email") // Sets the username parameter to "email"
-                        .defaultSuccessUrl("/") // Redirects to "/users" on successful login
+                        .defaultSuccessUrl("/users") // Redirects to "/users" on successful login
                         .permitAll() // Allows everyone to access the login page
                 )
 
