@@ -4,27 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <header>
         <div class="iconheader">
-            <a href="index.html">
-                <img src="images/grifobranco.png" alt="grifo">
+            <a th:href="@{/}">
+                <img src="/images/grifobranco.png" alt="grifo">
             </a>
         </div>
         <nav>
-            <a href="avisos.html">
-                <button type="button">Avisos</button>
+            <a th:href="@{/avisos}">
+                <button type="button" class="button-avisos">Avisos</button>
             </a>
-            <a href="loja.html">
-                <button type="button">Loja</button>
+            <a th:href="@{/loja}">
+                <button type="button" class="button-loja">Loja</button>
+            </a>
+            <a th:href="@{/login}">
+                <button type="button" class="button-avisos">Login</button>
+            </a>
+            <a th:href="@{/register}">
+                <button type="button" class="button-avisos">Sign Up</button>
             </a>
         </nav>
     </header>
 
     <div class="meiopag">
-        <img src="images/grifo_roda.png" alt="grifao" id="grifao">
+        <img src="/images/grifo_roda.png" alt="grifao" id="grifao">
         <div class="textosintro">
                 <p>Bem-vindo ao portal oficial da Atlética Grifo, o coração esportivo do Instituto Militar de Engenharia (IME). Nossa atlética, reconhecida pela força, tradição e espírito de equipe, é mais do que apenas um símbolo esportivo – ela é o ponto de união entre alunos e ex-alunos que compartilham da paixão por representar o IME com garra e determinação. </p>
                 <p>Neste site, você terá acesso a uma variedade de conteúdos que mantêm a comunidade Grifo sempre conectada e informada. Na seção de avisos, você encontrará atualizações importantes sobre nossos eventos, competições e reuniões, garantindo que ninguém perca as últimas novidades. A área de notícias traz reportagens e artigos sobre os feitos e conquistas de nossos atletas, além de entrevistas e destaques sobre o cotidiano da nossa atlética.</p>

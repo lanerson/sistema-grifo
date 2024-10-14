@@ -4,21 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Avisos</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <link rel="stylesheet" href="styles/avisos.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/avisos.css">
 </head>
 <body>
     <header>
         <div class="iconheader">
-            <a href="index.html">
+            <a th:href="@{}">
                 <img src="images/grifobranco.png" alt="grifo">
             </a>
         </div>
         <nav>
-            <a href="avisos.html">
+            <a th:href="@{/avisos}">
                 <button type="button" class="button-avisos">Avisos</button>
             </a>
-            <a href="loja.html">
+            <a th:href="@{/loja}">
                 <button type="button" class="button-loja">Loja</button>
             </a>
         </nav>

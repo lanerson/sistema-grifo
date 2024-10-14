@@ -24,14 +24,14 @@ public class AppController {
         // Returns the name of the view to be rendered for the home page
         return "index";
     }
-    
+
     // Method to handle the registration form request
     @GetMapping("/register")
     public String showRegistrationForm(Model model) {
         // Adds a new Users object to the model to be used in the registration form
         model.addAttribute("user", new User());
         // Returns the name of the view to be rendered for the registration form
-        return "signup_form";
+        return "register";
     }
 
     // Method to handle the registration form submission
@@ -42,7 +42,7 @@ public class AppController {
         if (user.getPassword() == null) {
 
             throw new IllegalArgumentException("Password cannot be null");
-    
+
         }
         // Encode the user's password
         String encodedPassword = passwordEncoder.encode(user.getPassword());
@@ -51,19 +51,29 @@ public class AppController {
         // Save the user object to the repository
         userRepo.save(user);
         // Returns the name of the view to be rendered after successful registration
-        return "register_success";
+        return "login";
     }
 
     @GetMapping("/users")
     public String listUsers(Model model) {
         List<User> listUsers = userRepo.findAll();
         model.addAttribute("listUsers", listUsers);
-        
+
         return "users";
     }
 
     @GetMapping("/login")
     public String login() {
         return "login";
+    }
+
+    @GetMapping("/avisos")
+    public String avisos() {
+        return "avisos";
+    }
+
+    @GetMapping("/loja")
+    public String loja() {
+        return "loja";
     }
 }

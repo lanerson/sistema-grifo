@@ -12,7 +12,10 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration // Marks this class as a configuration class for Spring
 public class WebSecurityConfig {
 
-    /*A bean is simply a Java object that is instantiated, assembled, and managed by the Spring IoC container. */
+    /*
+     * A bean is simply a Java object that is instantiated, assembled, and managed
+     * by the Spring IoC container.
+     */
     @Bean // Defines a bean for UserDetailsService
     UserDetailsService userDetailsService() {
         return new CustomUserDetailsService(); // Custom implementation of UserDetailsService
@@ -33,22 +36,25 @@ public class WebSecurityConfig {
 
     @Bean // Defines a bean for SecurityFilterChain
     SecurityFilterChain configure(HttpSecurity http) throws Exception {
-        http.authenticationProvider(authenticationProvider()); // Sets the authentication provider
+        http.authenticationProvider(authenticationProvider()); // Sets the
+        // authentication provider
 
-        http.authorizeHttpRequests(auth ->
-            auth.requestMatchers("/users").authenticated() // Requires authentication for "/users" endpoint
-            .anyRequest().permitAll() // Permits all other requests
+        http.authorizeHttpRequests(auth -> auth
+                .requestMatchers("/users").authenticated() // Requires authentication for
+                // "/users" endpoint
+                .anyRequest().permitAll() // Permits all other requests
         )
-        
-        .formLogin(login ->
-            login.loginPage("/login")
-            .usernameParameter("email") // Sets the username parameter to "email"
-            .defaultSuccessUrl("/users") // Redirects to "/users" on successful login
-            .permitAll() // Allows everyone to access the login page
-        )
-        
-        .logout(logout -> logout.logoutSuccessUrl("/").permitAll() // Redirects to "/" on logout and allows everyone to access it
-        );
+
+                .formLogin(login -> login.loginPage("/login")
+                        .usernameParameter("email") // Sets the username parameter to "email"
+                        .defaultSuccessUrl("/") // Redirects to "/users" on successful login
+                        .permitAll() // Allows everyone to access the login page
+                )
+
+                .logout(logout -> logout.logoutSuccessUrl("/").permitAll() // Redirects to
+                // "/" on logout and allows
+                // everyone to access it
+                );
 
         return http.build(); // Builds the SecurityFilterChain
     }
