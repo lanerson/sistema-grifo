@@ -11,14 +11,16 @@ class Product {
 
     private @Id @GeneratedValue Long id;
     private String name;
-    private float price;        
+    private float price;
+    private String image;        
 
     Product() {
     }
 
-    Product(String name, float price, int qtd) {
+    Product(String name, float price, String image) {
         this.name = name;
         this.price = price;
+        this.image = image;
     }
 
     public Long getId() {
@@ -33,6 +35,10 @@ class Product {
         return this.price;
     }
 
+    public String getImage(){
+        return this.image;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -43,6 +49,10 @@ class Product {
 
     public void setPrice(float price) {
         this.price = price;
+    }
+
+    public void setImage(String image){
+        this.image = image;
     }
 
     @Override

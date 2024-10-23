@@ -12,13 +12,15 @@ class Publication {
     private @Id @GeneratedValue Long id;
     private String title;
     private String description;
+    private String image;
 
     Publication() {
     }
 
-    Publication(String title, String description) {
+    Publication(String title, String description, String image) {
         this.title = title;
         this.description = description;
+        this.image = image;
     }
 
     public Long getId() {
@@ -33,6 +35,10 @@ class Publication {
         return this.description;
     }
 
+    public String getImage(){
+        return this.image;
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
@@ -44,6 +50,11 @@ class Publication {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    public void setImage(String image){
+        this.image = image;
+    }
+
 
     @Override
     public int hashCode() {
