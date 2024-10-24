@@ -124,7 +124,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.example.backend.BackendApplication</mainClass> ou LoginApplication
+					<mainClass>com.example.backend.BackendApplication</mainClass>
 				</configuration>
 			</plugin>
 		</plugins>
