@@ -25,77 +25,36 @@
     <div class="meiopag">
         <main>
             <section class="products-container" id="product-list">
-                <div class="product">
-                    <img src="/images/Camiseta_preta.png">
-                    <p>Camisa preta padrão grifo</p>
-                    <p>R$50</p>
-                        <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/camisa_azul.jpg">
-                    <p>Camisa azul padrão grifo</p>
-                    <p>R$50</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/Camiseta_vermelha.png">
-                    <p>Camisa vermelha padrão grifo</p>
-                    <p>R$50</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/Camiseta_Rosa.png">
-                    <p>Camisa azul padrão grifo</p>
-                    <p>R$50</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/Camisa_heineken.png">
-                    <p>Camisa Heineken</p>
-                    <p>R$50</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/Camisa_keepcalm.png">
-                    <p>Camisa azul padrão grifo</p>
-                    <p>R$50</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/Moletom_canguru.png">
-                    <p>Moletom canguru</p>
-                    <p>R$200</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
-                <div class="product">
-                    <img src="/images/canecaetirante.jpeg">
-                    <p>Caneca e tirante</p>
-                    <p>R$30</p>
-                    <button type="button" class="button-encomendar encomendarBtn">Encomendar</button>
-                </div>
                 
-                <div id="popupForm">
-                    <div class="form-content">
-                        <button class="close-btn" id="closeBtn">X</button>
-                        <h2>Faça sua encomenda</h2>
-                        <form id="encomendarForm">
-                            <label for="nome">Nome:</label><br>
-                            <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br>
-            
-                            <label for="email">E-mail:</label><br>
-                            <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required><br>
-            
-                            <label for="socio">Você é sócio?</label><br>
-                            <select id="socio" name="socio">
-                                <option value="sim">Sim</option>
-                                <option value="nao">Não</option>
-                            </select><br><br>
-            
-                            <input type="submit" value="Enviar">
-                        </form>
-                    </div>
-                </div>
             </section>
+            <div id="popupForm">
+                <div class="form-content">
+                    <button class="close-btn" id="closeBtn">  X  </button>
+                    <h2>Faça sua encomenda</h2>
+                    <form id="orderForm">
+                        <label for="nome">Nome</label><br>
+                        <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required><br>
+        
+                        <label for="email">E-mail</label><br>
+                        <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required><br>
+                        
+                        <label for="tamanho">Tamanho</label><br>
+                        <select id="tamanho" name="tamanho">
+                            <option value="P">P</option>
+                            <option value="M">M</option>
+                            <option value="G">G</option>
+                        </select><br>
+
+                        <label for="socio">Você é sócio?</label><br>
+                        <select id="socio" name="socio">
+                            <option value="sim">Sim</option>
+                            <option value="nao">Não</option>
+                        </select><br><br>
+        
+                        <input type="submit" value="Enviar">
+                    </form>
+                </div>
+            </div>
         </main>
     </div>
 

@@ -75,8 +75,9 @@ main {
 
 
 #popupForm {
-    display: none;
+    display: none;    
     position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
     width: 100%;
@@ -112,8 +113,8 @@ main {
 .close-btn {
     background-color: #750000;
     color: white;
-    padding: 8px;
-    width: 8%;
+    padding: 10px;
+    /* width: auto; */
     border: none;
     border-radius: 5px;
     cursor: pointer;
