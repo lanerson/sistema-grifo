@@ -52,20 +52,19 @@ public class PublicationController {
     @PostMapping(path = "/create")
     Publication newPublication(@RequestParam("title") String title, @RequestParam("description") String description,
             @RequestParam("image") MultipartFile file) {
+        String nameDefault = "default.jpeg";
         Publication newPublication = new Publication();
         newPublication.setTitle(title);
         newPublication.setDescription(description);
         try {
             // Verifica se o arquivo é vazio e salva a imagem padrão
             if (file.isEmpty()) {
-                Path path = Paths.get(uploadDir + File.separator + "default.png");
-                newPublication.setImage(path.toString());
+                newPublication.setImage(nameDefault);
                 return repository.save(newPublication); // Retorna aqui se o arquivo é vazio
             }
 
             // Caminho onde a imagem será salva
-            Path path = Paths.get(uploadDir + File.separator + title + "_"
-                    + file.getOriginalFilename());
+            Path path = Paths.get(uploadDir + File.separator + file.getOriginalFilename());
 
             // Criar os diretórios se não existirem
             Files.createDirectories(path.getParent());
@@ -74,13 +73,12 @@ public class PublicationController {
             Files.write(path, file.getBytes());
 
             // Definir o caminho da imagem no produto
-            newPublication.setImage(path.toString());
+            newPublication.setImage(file.getOriginalFilename());
 
         } catch (IOException e) {
             // Logar o erro para melhor depuração
             System.err.println("Erro ao salvar a imagem: " + e.getMessage());
-            Path path = Paths.get(uploadDir + File.separator + "default.png");
-            newPublication.setImage(path.toString());
+            newPublication.setImage(nameDefault);
         }
         System.out.println(newPublication.getImage());
         return repository.save(newPublication);

@@ -53,21 +53,20 @@ public class ProductController {
     @PostMapping(path = "/create")
     Product newProduct(@RequestParam("name") String name, @RequestParam("price") float price,
             @RequestParam("image") MultipartFile file) {
+        String nameDefault = "default.jpeg";
         Product newProduct = new Product();
         newProduct.setName(name);
         newProduct.setPrice(price);
         try {
             // Verifica se o arquivo é vazio e salva a imagem padrão
             if (file.isEmpty()) {
-                Path path = Paths.get(uploadDir + File.separator + "default.png");
-                newProduct.setImage(path.toString());
+                newProduct.setImage(nameDefault);
                 return repository.save(newProduct); // Retorna aqui se o arquivo é vazio
             }
 
             // Caminho onde a imagem será salva
-            Path path = Paths.get(uploadDir + File.separator + name + "_"
+            Path path = Paths.get(uploadDir + File.separator
                     + file.getOriginalFilename());
-
 
             // Criar os diretórios se não existirem
             Files.createDirectories(path.getParent());
@@ -76,13 +75,12 @@ public class ProductController {
             Files.write(path, file.getBytes());
 
             // Definir o caminho da imagem no produto
-            newProduct.setImage(path.toString());
+            newProduct.setImage(file.getOriginalFilename());
 
         } catch (IOException e) {
             // Logar o erro para melhor depuração
             System.err.println("Erro ao salvar a imagem: " + e.getMessage());
-            Path path = Paths.get(uploadDir + File.separator + "default.png");
-            newProduct.setImage(path.toString());
+            newProduct.setImage(nameDefault);
         }
         System.out.println(newProduct.getImage());
         return repository.save(newProduct);
