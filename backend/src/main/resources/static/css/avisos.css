@@ -1,3 +1,83 @@
 #grifao{
-    width: 20%;
+    width: 10%;
+}
+
+.meiopag{
+    display: flex;
+    flex-direction: column;
+}
+
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    margin-bottom: 20px;
+}
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cards-container {
+    display: flex;
+    overflow: hidden;
+    width: 90%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    background-color: white;
+    color: black;
+    border-radius: 10px;
+    font-size: 1rem;
+    width: 25%;
+    flex: 0 0 25%;
+    text-align: center;
+    margin: 4%;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
+
+.card:nth-child(2) {
+    transform: scale(1.2);
+    z-index: 2;
+}
+
+.prev, .next {
+    background-color: #ddd;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.prev {
+    left:0px;
+}
+
+.next {
+    right:0px;
+
+}
+
+.button-aviso{
+    background-color:#750000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 5px;
 }

@@ -76,4 +76,8 @@ public class AppController {
     public String loja() {
         return "loja";
     }
+    @GetMapping("/areadomembro")
+    public String areadomembro() {
+        return "areadomembro";
+    }
 }

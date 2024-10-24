@@ -2,7 +2,6 @@ package com.example.backend.login;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -40,17 +39,17 @@ public class WebSecurityConfig {
         http.authenticationProvider(authenticationProvider()); // Sets the
         // authentication provider
         http
-                .csrf(csrf -> csrf.disable())
+                .csrf(csrf -> csrf.disable())                
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/users").authenticated() // Requires authentication for
+                                .requestMatchers("/areadomembro").authenticated() // Requires authentication for
                                 // "/users" endpoint
-                                .requestMatchers(HttpMethod.POST, "/products").permitAll()
+                                                                
                                 .anyRequest().permitAll() // Permits all other requests
                 )
 
                 .formLogin(login -> login.loginPage("/login")
                                 .usernameParameter("email") // Sets the username parameter to "email"
-                                .defaultSuccessUrl("/users") // Redirects to "/users" on successful login
+                                .defaultSuccessUrl("/areadomembro") // Redirects to "/users" on successful login
                                 .permitAll() // Allows everyone to access the login page
                 )
 
