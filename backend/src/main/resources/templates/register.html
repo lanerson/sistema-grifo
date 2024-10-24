@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+     <img src="/images/grifo_roda.png" alt="grifao" id="grifao">
+     <form th:action="@{/process_register}" th:object="${user}" 
+            class="form-login" method="post">
+        
+        <!-- Email field -->
+        <label for="email">E-mail: </label>
+        <input type="email" th:field="*{email}" required />
+
+        <!-- Password field -->
+        <label for="password">Password: </label>
+        <input type="password" th:field="*{password}" required minlength="6" maxlength="10"/>
+        <!-- First Name field -->            
+        <label for="firstName">First Name: </label>        
+        <input type="text" th:field="*{firstName}"
+                        required minlength="2" maxlength="20"/>
+        <!-- Last Name field -->            
+        <label for="lastName">Last Name: </label>    
+        <input type="text" th:field="*{lastName}"
+                        required minlength="2" maxlength="20" />                            
+        <!-- Submit button -->            
+        <button type="submit">Sign Up</button>                    
+    </form>
+    <!-- <script src="scripts/login.js" charset="utf-8"></script> -->
+</body>
+
+</html>

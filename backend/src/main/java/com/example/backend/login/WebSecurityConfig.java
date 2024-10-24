@@ -41,7 +41,8 @@ public class WebSecurityConfig {
         http
                 .csrf(csrf -> csrf.disable())                
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/areadomembro").authenticated() // Requires authentication for
+                                .requestMatchers("/areadomembro").authenticated() // Requires authentication
+                                .requestMatchers("/register").authenticated() // Requires authentication
                                 // "/users" endpoint
                                                                 
                                 .anyRequest().permitAll() // Permits all other requests
