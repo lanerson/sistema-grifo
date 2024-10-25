@@ -39,19 +39,20 @@ public class WebSecurityConfig {
         http.authenticationProvider(authenticationProvider()); // Sets the
         // authentication provider
         http
-                .csrf(csrf -> csrf.disable())                
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                                .requestMatchers("/areadomembro").authenticated() // Requires authentication
-                                .requestMatchers("/register").authenticated() // Requires authentication
-                                // "/users" endpoint
-                                                                
-                                .anyRequest().permitAll() // Permits all other requests
+                        .requestMatchers("/areadomembro").authenticated() // Requires authentication
+                        .requestMatchers("/register").authenticated() // Requires authentication
+                        .requestMatchers("/users").authenticated() // Requires authentication
+                        // "/users" endpoint
+
+                        .anyRequest().permitAll() // Permits all other requests
                 )
 
                 .formLogin(login -> login.loginPage("/login")
-                                .usernameParameter("email") // Sets the username parameter to "email"
-                                .defaultSuccessUrl("/areadomembro") // Redirects to "/users" on successful login
-                                .permitAll() // Allows everyone to access the login page
+                        .usernameParameter("email") // Sets the username parameter to "email"
+                        .defaultSuccessUrl("/areadomembro") // Redirects to "/users" on successful login
+                        .permitAll() // Allows everyone to access the login page
                 )
 
                 .logout(logout -> logout.logoutSuccessUrl("/").permitAll() // Redirects to

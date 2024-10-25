@@ -1,6 +1,6 @@
 const popupForm = document.getElementById("popupForm");
 const closeBtn = document.getElementById("closeBtn");
-const encomendarForm = document.getElementById("orderForm");
+const orderForm = document.getElementById("orderForm");
 let productSelected=""
 closeBtn.addEventListener("click", () => {
   popupForm.style.display = "none";
@@ -21,7 +21,7 @@ orderForm.addEventListener("submit", function(event) {
 });
 
 
-fetch('http://localhost:8080/products/all', { method: 'GET' })
+fetch('/products/all', { method: 'GET' })
   .then(response => {
     if (!response.ok) {
       throw new Error('Erro na requisição: ' + response.status);

@@ -7,10 +7,7 @@
 <body>
 <div>
     <div>
-        <form th:action="@{/logout}" method="post">
-            <p>
-                <b><span sec:authentication="principal.fullName"></span></b>
-            </p>
+        <form th:action="@{/logout}" method="post">            
             <input type="submit" value="Sign Out" />
         </form>
     </div>

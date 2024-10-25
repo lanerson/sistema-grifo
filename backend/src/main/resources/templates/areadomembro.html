@@ -26,12 +26,15 @@
 
     <div class="meiopag">        
         <div class="content">
-            <form th:action="@{/logout}" method="post">                
-                <input type="submit" value="Sign Out" />
-            </form>
+            <div class="pai-options">                
+                <a th:href="@{/logout}" class="options">Log Out</a>
+                <a th:href="@{/register}" class="options">Registrar</a>
+                <a th:href="@{/users}" class="options">Usuários</a>
+            </div>
+            
             
             <div class="form-container" >
-                <form method="POST" action="http://localhost:8080/publications/create" enctype="multipart/form-data" id="form-container">
+                <form method="POST" action="http://localhost:8080/publications/create" enctype="multipart/form-data" id="formPublication">
                     <h2>Criar Aviso</h2>
 
                     <label for="title">Título</label>
@@ -43,11 +46,11 @@
                     <label for="image">Imagem</label>
                     <input type="file" id="image" name="image" accept="image/*" required>
 
-                    <button type="submit" th:onclick="@{/}">Enviar</button>
+                    <button type="submit">Enviar</button> 
                 </form>
             </div>
             <div class="form-container" >
-                <form method="POST" action="http://localhost:8080/products/create" enctype="multipart/form-data" id="form-container">
+                <form method="POST" action="http://localhost:8080/products/create" enctype="multipart/form-data" id="formProduct">
                     <h2>Criar Produto</h2>
 
                     <label for="name">Nome do Produto</label>
@@ -56,10 +59,10 @@
                     <label for="price">Preço</label>
                     <input type="number" id="price" name="price" required>
 
-                    <label for="image">Imagem do Produto:</label>
+                    <label for="image">Imagem do Produto</label>
                     <input type="file" id="image" name="image" accept="image/*" required>
 
-                    <button type="submit">Enviar</button>
+                    <button type="submit"> Enviar</button>
                 </form>
             </div>
         </div>
