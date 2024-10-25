@@ -3,6 +3,7 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>List Users</title>
+    <link rel="stylesheet" href="/css/users.css">
 </head>
 <body>
 <div>
@@ -22,18 +23,48 @@
                     <th>E-mail</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="user: ${listUsers}">
-                    <td th:text="${user.id}"></td>
+                    <td th:text="${user.id}" id="userId"></td>
                     <td th:text="${user.email}"></td>
                     <td th:text="${user.firstName}"></td>
                     <td th:text="${user.lastName}"></td>
+                    <td>
+                        <a href="#" onclick="deleteUser(); return false;">
+                            🗑️
+                        </a>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </div>
+<script>
+    const userId = document.getElementById("userId");
+    function deleteUser() {
+        console.log(userId.textContent)
+        const confirmation = confirm("Are you sure you want to delete this user?");
+        if (confirmation) {
+            fetch(`/users/${userId.textContent}`, {
+                method: 'DELETE',
+            })
+            .then(response => {
+                if (response.ok) {
+                    alert("User deleted successfully.");
+                    location.reload();
+                } else {
+                    alert("Error deleting user.");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert("Error deleting user.");
+            });
+        }
+    }
+</script>
 </body>
 </html>

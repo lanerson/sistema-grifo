@@ -7,8 +7,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 // This class is used for hashing passwords using the BCrypt algorithm, which is a strong and adaptive hashing algorithm
 // designed to be computationally intensive to resist brute-force attacks.
 import org.springframework.stereotype.Controller;
-
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.ui.Model;
 
@@ -62,6 +63,12 @@ public class AppController {
         return "users";
     }
 
+    @DeleteMapping("/users/{id}")
+    public String deleteUser(@PathVariable("id") Long id) {
+        userRepo.deleteById(id);
+        return "users";
+    }
+
     @GetMapping("/login")
     public String login() {
         return "login";
@@ -76,6 +83,7 @@ public class AppController {
     public String loja() {
         return "loja";
     }
+
     @GetMapping("/areadomembro")
     public String areadomembro() {
         return "areadomembro";
