@@ -38,6 +38,9 @@ select {
 }
 
 @media(max-width:1500px){
+    .pai-options {
+        flex-direction: row;
+    }
     .content {
         flex-direction: column;
         gap: 20px;
