@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".produto.ProdutoFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/black"
+        tools:context=".produto.ProdutoFragment">
+
+        <ToggleButton
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginHorizontal="10dp"
+            android:textOn=""
+            android:textOff=""
+            android:id="@+id/button_pesquisar"
+            android:layout_gravity="center_vertical"
+            android:background="@drawable/toggle_button_selector" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColorHint="#4E4E4E"
+            android:hint="Pesquise Aqui..."
+            android:layout_marginHorizontal="10dp"
+            android:textColor="@color/white"
+            android:paddingHorizontal="20dp"
+            android:id="@+id/edit_pesquisar"
+            android:background="@color/black"
+            android:drawableEnd="@drawable/lupa"/>
+
+    </LinearLayout>
+     <androidx.recyclerview.widget.RecyclerView
+         android:layout_marginTop="50dp"
+        android:id="@+id/produto_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</FrameLayout>
