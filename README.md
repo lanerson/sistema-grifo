@@ -48,7 +48,7 @@ spring.servlet.multipart.max-file-size=10MB
 spring.servlet.multipart.max-request-size=15MB
 
 # Configurações de conexão com o banco de dados
-spring.datasource.url=jdbc:mysql://localhost:3306/TESTE_DB
+spring.datasource.url=jdbc:mysql://localhost:3306/<NOME_DO_BANCO>
 spring.datasource.username=<nome_de_usuario>
 spring.datasource.password=<senha>
 
@@ -60,7 +60,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 spring.main.allow-bean-definition-overriding=true
 ```
-**Importante:** Lembre-se de substituir <nome_de_usuario> e <senha> pelas credenciais corretas do seu banco de dados.
+**Importante:** Lembre-se de substituir <NOME_DO_BANCO>, <nome_de_usuario> e <senha> pelas credenciais corretas do seu banco de dados.
 
 4. Build e Execução do Backend
 
