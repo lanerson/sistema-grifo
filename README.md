@@ -60,7 +60,7 @@ spring.jpa.hibernate.ddl-auto=update
 
 spring.main.allow-bean-definition-overriding=true
 ```
-**Importante:** Lembre-se de substituir <NOME_DO_BANCO>, <nome_de_usuario> e <senha> pelas credenciais corretas do seu banco de dados.
+**Importante:** Lembre-se de substituir <NOME_DO_BANCO>, <nome_de_usuario> e <senha> pelas credenciais corretas do seu banco de dados. Além de completar o caminho de file.upload-dir
 
 4. Build e Execução do Backend
 
