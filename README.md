@@ -81,7 +81,7 @@ spring.main.allow-bean-definition-overriding=true
 ### Frontend (Android)
 1. Configurar o Android Studio
 
-    Certifique-se de estar utilizando a versão mais recente do Android Studio.
+    Certifique-se de estar utilizando a versão mais recente do Android Studio. <Ladybug | 2024.2.1>
 3. Configurar o Backend no Android
  
     No arquivo Constantes.java, localizado em /mobile/app/src/main/java/com/example/navigationapplication/Constantes.java, altere o valor da variável BASE_URL para o IP ou endereço onde o backend está sendo executado. Isso permitirá que o aplicativo Android se conecte corretamente ao servidor.
