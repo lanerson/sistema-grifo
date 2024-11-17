@@ -27,10 +27,11 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
     String url = Constantes.BASE_URL+"/images/";
 
     ProdutoAdapter(List<Produto> produtos, Context context){
-        this.produtos = produtos;
-        this.produtosOriginal = produtos;
+        this.produtos = new ArrayList<>(produtos);
+        this.produtosOriginal = new ArrayList<>(produtos);
         this.context = context;
     }
+
 
 
     @NonNull
@@ -68,7 +69,7 @@ public class ProdutoAdapter extends RecyclerView.Adapter<ProdutoAdapter.ViewHold
             produtos.clear();
             produtos.addAll(filteredList);  // Atualiza a lista com os itens filtrados
         }
-        this.notifyDataSetChanged();  // Notifica o RecyclerView de que os dados foram atualizados
+        notifyDataSetChanged();  // Notifica o RecyclerView de que os dados foram atualizados
     }
 
     @Override
