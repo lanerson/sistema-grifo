@@ -31,6 +31,7 @@ sudo apt update
 sudo apt install mysql-server
 ```
 - Para Windows:
+
     Use o XAMPP ou outro ambiente local para configurar o banco de dados MySQL.
 
 3. Configurar o Arquivo application.properties
@@ -64,12 +65,14 @@ Importante: Lembre-se de substituir <nome_de_usuario> e <senha> pelas credenciai
 4. Build e Execução do Backend
 
 - Para Linux:
+
     Execute os comandos abaixo para compilar e rodar o backend:
 ```bash
 ./mvnw clean install
 ./mvnw spring-boot:run
 ```
 - Para Windows:
+
     Execute os seguintes comandos no terminal:
 ```cmd
 .\mvnw.cmd clean install
@@ -77,8 +80,10 @@ Importante: Lembre-se de substituir <nome_de_usuario> e <senha> pelas credenciai
 ```
 ### Frontend (Android)
 1. Configurar o Android Studio
+
     Certifique-se de estar utilizando a versão mais recente do Android Studio.
-2. Configurar o Backend no Android
+3. Configurar o Backend no Android
+ 
     No arquivo Constantes.java, localizado em /mobile/app/src/main/java/com/example/navigationapplication/Constantes.java, altere o valor da variável BASE_URL para o IP ou endereço onde o backend está sendo executado. Isso permitirá que o aplicativo Android se conecte corretamente ao servidor.
 ```java
 public static final String BASE_URL = "http://<IP_do_backend>:8080";
